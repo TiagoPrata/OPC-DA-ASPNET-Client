@@ -5,21 +5,27 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
     <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 </head>
 <body>
-    <form id="form1" runat="server">
-    <div>
-        <h3>Connect OPC Server using OpcNetApi.dll</h3>
+    <div class="jumbotron">
+        <form id="form1" runat="server">
+            <h3 class="display-4">Connect to OPC Server</h3>
 
-        <div style="margin-left:30px;">
-            <p>OPC Server name:  <asp:TextBox ID="tbServerName" runat="server" Width="200"></asp:TextBox></p>
-        </div>
-        <div style="margin-left:30px;">
-        <p>OPC Tag: <asp:TextBox ID="tbTagName" runat="server" Width="200"></asp:TextBox></p>
-        <asp:Button ID="btReadTag" runat="server" Text="Get OPC tag value" OnClick="btReadTag_Click" />
-        <p><code><asp:Literal ID="liResult" runat="server"></asp:Literal></code></p>
+            <div class="form-group">
+                <label>OPC Server name:</label>
+                <asp:TextBox class="form-control" ID="tbServerName" runat="server" Width="200" placeholder="Enter server name"></asp:TextBox>
             </div>
+            <div class="form-group">
+                <label>OPC tag:</label>
+                <asp:TextBox class="form-control" ID="tbTagName" runat="server" Width="200" placeholder="Enter tag name"></asp:TextBox>
+            </div>
+            <div class="form-group">
+                <asp:Button class="btn btn-primary btn-sm" ID="btReadTag" runat="server" Text="Get OPC tag value" OnClick="btReadTag_Click" />
+                <p><code><asp:Literal ID="liResult" runat="server"></asp:Literal></code></p>
+            </div>
+        </form>
     </div>
-    </form>
+    
 </body>
 </html>
